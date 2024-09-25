@@ -1,0 +1,80 @@
+/* External Stylesheet */
+/* External Stylesheet */
+body {
+    background-image: url('images/back.png');
+    background-size: cover;
+    color: #e0e0e0;
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+nav a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #fff;
+    transition: color 0.5s ease;
+}
+
+main {
+    margin-top: 20px;
+}
+
+article {
+    padding: 20px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    max-width: 40%;
+    height: auto;
+    transition: transform 1s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+/* Link Pseudo-Classes */
+a:link {
+    color: #e0e0e0;
+}
+
+a:visited {
+    color: #c0c0c0;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+a:active {
+    color: #ff0000;
+}
+
+figure img {
+    filter: grayscale(70%) blur(1px);
+}
+

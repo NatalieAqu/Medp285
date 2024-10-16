@@ -7,12 +7,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url('images/background.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    position: relative; 
-    overflow: hidden;   
-    background-repeat: no-repeat; 
+    background-image: url('images/background.jpg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background image */
+    position: relative; /* Added for positioning pseudo-elements */
+    overflow: hidden;   /* Prevents overflow due to pseudo-elements */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
 }
 
 /* Adding lines around the rim */
@@ -24,28 +24,29 @@ body::before, body::after {
 }
 
 body::before {
-    top: -10px; /* Adjust as needed */
-    left: -10px; /* Adjust as needed */
-    right: -10px; /* Adjust as needed */
-    bottom: -10px; /* Adjust as needed */
-    border-radius: 10px; /* Optional: for rounded corners */
+    top: -10px; 
+    left: -10px; 
+    right: -10px; 
+    bottom: -10px; 
+    border-radius: 10px; 
 }
 
 body::after {
-    top: -15px; /* Adjust to create an inner frame effect */
-    left: -15px; /* Adjust to create an inner frame effect */
-    right: -15px; /* Adjust to create an inner frame effect */
-    bottom: -15px; /* Adjust to create an inner frame effect */
-    border-radius: 10px; /* Optional: for rounded corners */
-    border: 3px dashed black; /* Different style for the inner frame */
+    top: -15px; 
+    left: -15px; 
+    right: -15px; 
+    bottom: -15px; 
+    border-radius: 10px; 
+    border: 3px dashed black; 
 }
 
 #wrapper {
     text-align: center;
-    position: relative; /* Ensure that the wrapper is above the lines */
-    z-index: 1; /* Place wrapper above pseudo-elements */
+    position: relative; 
+    z-index: 1; 
 }
 
+/* Flex container to align shapes and images */
 .flex-container {
     display: flex;
     justify-content: center;
@@ -118,7 +119,7 @@ a:hover {
 .op-art-image {
     width: 100px;
     height: 100px;
-    margin: 10px 0; 
+    margin: 10px 0; /* Space between images */
     border: 3px solid black;
     box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.5);
 }
@@ -128,8 +129,10 @@ a:hover {
     transition: 0.3s ease;
 }
 
+/* Additional effects for strong lines and Op Art vibes */
 .art-circle:hover, .art-square:hover, .art-rectangle:hover, .art-triangle:hover, .art-oval:hover {
     border-width: 10px;
     transition: 0.3s ease;
 }
+
 

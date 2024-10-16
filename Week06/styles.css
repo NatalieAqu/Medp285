@@ -1,0 +1,143 @@
+/* General styling */
+/* Background image for the entire page */
+body {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-image: url('images/background.jpg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background image */
+    position: relative; /* Added for positioning pseudo-elements */
+    overflow: hidden;   /* Prevents overflow due to pseudo-elements */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+
+/* Adding lines around the rim */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border: 5px solid black; /* Thickness and color of the lines */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+body::before {
+    top: -10px; /* Adjust as needed */
+    left: -10px; /* Adjust as needed */
+    right: -10px; /* Adjust as needed */
+    bottom: -10px; /* Adjust as needed */
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+body::after {
+    top: -15px; /* Adjust to create an inner frame effect */
+    left: -15px; /* Adjust to create an inner frame effect */
+    right: -15px; /* Adjust to create an inner frame effect */
+    bottom: -15px; /* Adjust to create an inner frame effect */
+    border-radius: 10px; /* Optional: for rounded corners */
+    border: 3px dashed black; /* Different style for the inner frame */
+}
+
+#wrapper {
+    text-align: center;
+    position: relative; /* Ensure that the wrapper is above the lines */
+    z-index: 1; /* Place wrapper above pseudo-elements */
+}
+
+/* Flex container to align shapes and images */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align shapes to the top */
+}
+
+/* Links, Shapes, and Images remain the same as before */
+.links {
+    margin-top: 30px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    margin: 0 30px;
+}
+
+a:hover {
+    color: #f00;
+}
+
+/* Geometric shapes with borders for the Op Art style */
+.art-circle, .art-square, .art-rectangle, .art-triangle, .art-oval {
+    margin: 20px;
+    border: 5px solid black;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for shapes */
+.art-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ff5e57;
+    border-radius: 50%;
+}
+
+.art-square {
+    width: 100px;
+    height: 100px;
+    background-color: #57a6ff;
+}
+
+.art-rectangle {
+    width: 150px;
+    height: 75px;
+    background-color: #ff57c9;
+}
+
+.art-triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #a3ff57;
+}
+
+.art-oval {
+    width: 150px;
+    height: 75px;
+    background-color: #ffb457;
+    border-radius: 50%;
+}
+
+/* Image section styling */
+.image-section {
+    display: flex; /* Use flexbox to align images */
+    flex-direction: column; /* Stack images vertically */
+    margin: 30px 20px; /* Space around images */
+}
+
+.op-art-image {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0; /* Space between images */
+    border: 3px solid black;
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.5);
+}
+
+.op-art-image:hover {
+    border-width: 5px;
+    transition: 0.3s ease;
+}
+
+/* Additional effects for strong lines and Op Art vibes */
+.art-circle:hover, .art-square:hover, .art-rectangle:hover, .art-triangle:hover, .art-oval:hover {
+    border-width: 10px;
+    transition: 0.3s ease;
+}
+
+/* Add this to your existing styles.css */
+
+
+/* Rest of your existing styles... */

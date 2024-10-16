@@ -7,15 +7,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url('images/background.jpg'); /* Path to your background image */
-    background-size: cover; /* Cover the entire area */
-    background-position: center; /* Center the background image */
-    position: relative; /* Added for positioning pseudo-elements */
-    overflow: hidden;   /* Prevents overflow due to pseudo-elements */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-image: url('images/background.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+    overflow: hidden;  
+    background-repeat: no-repeat; 
 }
 
-/* Adding lines around the rim */
 body::before, body::after {
     content: '';
     position: absolute;
@@ -50,7 +49,7 @@ body::after {
 .flex-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align shapes to the top */
+    align-items: flex-start; 
 }
 
 .links {
@@ -111,15 +110,15 @@ a:hover {
 
 /* Image section styling */
 .image-section {
-    display: flex; /* Use flexbox to align images */
-    flex-direction: column; /* Stack images vertically */
-    margin: 30px 20px; /* Space around images */
+    display: flex; 
+    flex-direction: column;
+    margin: 30px 20px; 
 }
 
 .op-art-image {
     width: 100px;
     height: 100px;
-    margin: 10px 0; /* Space between images */
+    margin: 10px 0; 
     border: 3px solid black;
     box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.5);
 }
@@ -129,7 +128,6 @@ a:hover {
     transition: 0.3s ease;
 }
 
-/* Additional effects for strong lines and Op Art vibes */
 .art-circle:hover, .art-square:hover, .art-rectangle:hover, .art-triangle:hover, .art-oval:hover {
     border-width: 10px;
     transition: 0.3s ease;

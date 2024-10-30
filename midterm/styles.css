@@ -1,0 +1,151 @@
+body {
+    font-family: 'VT323', monospace;
+    background-color: #1c1c1c; /* Dark background for isolation */
+    color: #fff; /* White text  */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    font-family: 'Monoton', cursive;
+    text-align: center;
+    color: #222; /* Darker text for headers */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative; /* Position relative for moving images */
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.5em; 
+}
+
+.section {
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-item {
+    position: relative; /* Relative positioning for animated images */
+    margin: 20px 0;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    max-width: 300px; /* Control image size */
+    height: auto;
+    border-radius: 8px;
+    animation: bounce 20s infinite; /* Add bounce animation */
+}
+
+/* Glitch text effects */
+.glitch {
+    color: #ff4a57; /* Red for glitch effect */
+    text-shadow: 2px 2px 0 #333;
+}
+
+/* Link styles */
+.link {
+    color: #ff4a57; 
+    text-decoration: underline; 
+    transition: color 0.3s; 
+}
+
+.link:hover {
+    color: #ff9999; /* Lighter shade on hover */
+}
+
+.isolation-body {
+    background-color: #121212; 
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.5em; 
+}
+
+/* Animated images */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* returns to original position (home page)*/
+    }
+    80% {
+        transform: translateY(-20px); /* Bounces up */
+    }
+}
+
+.creepy-image {
+    animation: move 20s linear infinite; 
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(calc(100vw - 300px), calc(100vh - 300px)); /* moves to bottom right */
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+#image1 {
+    animation: coverPage 60s linear infinite; /* Animation for cloud to cover the page */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5); /* Start smaller and centered */
+    opacity: 0.8; /* Slight transparency for cloud effect */
+}
+
+@keyframes coverPage {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5); /* Starting size */
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(5); /* Final size to cover entire screen */
+        opacity: 1; /* Full opacity */
+    }
+}
+
+/* Other images */
+#image2 {
+    animation: move 40s linear infinite; 
+}
+
+#image3 {
+    position: absolute; /* Positioning for floating effect */
+    top: 20%; 
+    left: 50%; 
+    transform: translate(-50%, 0); /* Centers the image */
+    animation: float 60s linear infinite; /* Floating effect */
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, -10%);
+    }
+    50% {
+        transform: translate(-50%, -20%);
+    }
+    100% {
+        transform: translate(-50%, -10%); /* Returns to start */
+    }
+}

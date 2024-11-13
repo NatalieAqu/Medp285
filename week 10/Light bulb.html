@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values and even change the background color based on an action.</p>
+
+
+<button onclick="toggleLight('on')">Turn on the light</button>
+
+<img id="myImage" src="images/bulb_off.gif" style="width:200px">
+
+<button onclick="toggleLight('off')">Turn off the light</button>
+
+<script>
+    function toggleLight(state) {
+        const bulb = document.getElementById('myImage');
+        const body = document.body;
+
+        // Check if the light should be turned on or off
+        if (state === 'on') {
+            bulb.src = 'images/bulb_on.gif';
+            body.style.backgroundColor = 'black'; // Set background to black
+        } else {
+            bulb.src = 'images/bulb_off.gif';
+            body.style.backgroundColor = '#f0f8ff'; // Revert to light background
+        }
+    }
+</script>
+
+</body>
+</html>

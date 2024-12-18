@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stairway</title>
+    <link rel="stylesheet" href="stairwell.css">
+</head>
+<body>
+    <div class="stairway-container">
+        <div class="stairway">
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps"></div>
+            <div class="steps last-step">Final Step (Click to go to Parking Lot)</div>
+        </div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p>Do you want to go to the Parking Lot?</p>
+            <button id="confirmGo">Yes</button>
+            <button id="cancelGo">No</button>
+        </div>
+    </div>
+<audio id="ambient-sound" loop autoplay>
+    <source src="audio/footsteps.mp3" type="audio/mp3">
+    
+</audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

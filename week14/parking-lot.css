@@ -1,0 +1,231 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #101010; /* Dark background for liminal space effect */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Parking Lot Container */
+.parking-lot-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    perspective: 500px; /* Gives depth to the view */
+    overflow: hidden;
+}
+
+/* Ground-level Road Appearance */
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, #333333, #666666); /* Gray asphalt effect */
+    z-index: 1;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateX(5deg); /* Adds perspective */
+}
+
+/* Parking Lines (appear to stretch to the horizon) */
+.parking-lines {
+    position: absolute;
+    bottom: 10%; /* A little above the road */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.5;
+    animation: flicker 1.5s infinite ease-in-out;
+}
+
+/* Streetlight styles */
+.streetlight {
+    position: absolute;
+    bottom: 20%;
+    width: 10px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    z-index: 3;
+    animation: flickerLight 1.2s infinite ease-in-out;
+    cursor: pointer;
+}
+
+/* Interactive Streetlight Animation */
+.streetlight.on {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    background-color: #ffff99;
+}
+
+.streetlight:nth-child(odd) {
+    left: 10%;
+}
+
+.streetlight:nth-child(even) {
+    left: 90%;
+}
+
+/* Flicker effect for the streetlights */
+@keyframes flickerLight {
+    0% { 
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+        background-color: #ccc;
+    }
+    20% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+        background-color: #ffff99;
+    }
+    40% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+        background-color: #fff;
+    }
+    60% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        background-color: #cccccc;
+    }
+    80% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        background-color: #fff;
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        background-color: #ffff99;
+    }
+}
+
+/* Horizon and Distant Background */
+.horizon {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%) rotateX(2deg); /* Slight rotation for horizon */
+    width: 100%;
+    height: 20%;
+    background-color: #222222;
+    border-top: 5px solid #333;
+    z-index: 0;
+}
+
+/* Keyframe for Flickering Animation */
+@keyframes flicker {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.6; }
+}
+
+/* Style for the distant sky */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, #111111, #2a2a2a);
+    z-index: -1;
+}
+
+/* Distant Car Styling */
+.distant-car {
+    position: absolute;
+    bottom: 25%;
+    width: 60px;
+    height: 30px;
+    background-color: #333333;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    animation: moveCar 10s linear infinite;
+    z-index: 2;
+}
+
+/* Distant car animation */
+@keyframes moveCar {
+    0% {
+        left: -60px; /* Start off the screen */
+    }
+    100% {
+        left: 100%; /* Move to the right side */
+    }
+}
+
+.distant-car:nth-child(1) {
+    animation: moveCar 10s linear infinite; /* Slower car */
+}
+
+.distant-car:nth-child(2) {
+    animation: moveCar 12s linear infinite; /* Even slower car */
+}
+/* Ensure the link wraps the door correctly */
+.distant-door {
+    position: absolute;
+    bottom: 55%;
+    left: 80%;
+    transform: translateX(-50%) scale(0.6); /* Small and distant appearance */
+    z-index: 2;
+}
+
+.door-link {
+    display: block; /* Make the link a block-level element to fill the parent */
+    width: 100%;
+    height: 100%;
+}
+
+.door {
+    width: 50px;
+    height: 100px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: block; /* Make sure the door itself is a block element */
+}
+
+/* Hover effect for the door */
+.door:hover {
+    transform: scale(1) rotate(2deg);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Fog Image Styles */
+.fog {
+    position: absolute;
+    bottom: -3; /* Position at the bottom of the page */
+    left: 0;
+    width: 100%;  /* Set container width to 100% to cover the entire bottom */
+    height: 400%; /* Adjust height of the fog container */
+    z-index: 1; /* Ensure it’s in front of the road, but behind other elements */
+    overflow: hidden; /* Hide anything that goes outside the container */
+    pointer-events: none; /* Allow clicks to pass through the fog */
+}
+
+.fog img {
+    width: 100%; /* Make the fog image cover the entire width of the container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    opacity: 0.2; /* Slightly transparent for a foggy look */
+    animation: floatFog 20s linear infinite; /* Animation that moves the fog */
+}
+
+/* Animation to move the fog images */
+@keyframes floatFog {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: translateX(100%); /* Move to the right */
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallway</title>
+    <link rel="stylesheet" href="Styles.css">
+
+    <!-- Google Fonts link for Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="hallway-container">
+        <!-- Left Wall -->
+        <div class="wall left-wall">
+            <div class="doorgroup">
+                <a href="stairewell.html">
+                    <div class="door">
+                        <div class="apartment-number">101</div>
+                        <div class="apartment-image" style="background-image: url('images/stairs.jpeg');"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="doorgroup">
+                <div class="door">
+                    <div class="apartment-number">102</div>
+                    <div class="apartment-image" style="background-image: url('images/apt2.jpg');"></div>
+                </div>
+                <div class="mail-box"></div>
+            </div>
+        </div>
+
+        <!-- Right Wall -->
+        <div class="wall right-wall">
+            <div class="doorgroup">
+                <div class="door">
+                    <div class="apartment-number">103</div>
+                    <div class="apartment-image" style="background-image: url('images/darkapt.jpeg');"></div>
+                </div>
+            </div>
+            <div class="doorgroup">
+                <div class="door">
+                    <div class="apartment-number">104</div>
+                    <div class="apartment-image" style="background-image: url('images/apt4.jpeg');"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ceiling Light -->
+    <div class="ceiling-light" onclick="toggleLight()"></div>
+    <div class="flooring"></div>
+    <div class="notice-sign">CAUTION DO NOT CONTINUE</div>
+
+    <div class="background-segment top-section"></div>
+    <div class="background-segment bottom-section"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

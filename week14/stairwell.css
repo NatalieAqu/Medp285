@@ -1,0 +1,193 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to top, #101010, #303030); /* Dark, muted gradient */
+    background-color: #181818;
+    color: #ccc; /* Soft gray text for an eerie feel */
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    position: relative; /* This is required for absolutely positioned elements inside */
+}
+body::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/illusion.jpeg') no-repeat center center;
+    background-size: cover; /* Scale the image to cover the screen */
+    z-index: 0; /* Place the image behind everything */
+    opacity: 0.3; /* Adjust opacity for a subtle effect */
+    transform: rotate(95deg); /* Rotate the background image by 45 degrees */
+    transform-origin: center center; 
+}
+
+/* Stairway Container */
+.stairway-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Stairway Styles */
+.stairway {
+    width: 60%;
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    animation: moveStairs 10s linear infinite;
+    opacity: 0.8;
+}
+
+/* Steps Styling */
+.steps {
+    width: 100%;
+    height: 10%;
+    background: #202020;
+    border-top: 2px solid #505050;
+    margin-top: -2%;
+    box-shadow: 0px -2px 5px #000;
+    filter: blur(2px); /* Adds a sense of distortion */
+}
+
+/* Last Step Styling */
+.last-step {
+    background: #444;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    transition: background 0.3s, transform 0.3s ease-in-out;
+}
+
+.last-step:hover {
+    background: #666;
+    transform: scale(1.05);
+}
+
+/* Falling Shapes */
+.shape {
+    position: absolute;
+    top: -10%;
+    left: calc(5% + 90% * var(--random-x));
+    width: 50px;
+    height: 50px;
+    opacity: 0.7;
+    pointer-events: auto;
+    transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 2;
+    filter: blur(1px);
+}
+
+/* Shapes Styling (Geometric Op Art) */
+.shape.circle {
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff00ff, #000);
+}
+
+.shape.square {
+    background: linear-gradient(45deg, #ff9900, #660066);
+}
+
+.shape.triangle {
+    width: 0;
+    height: 0;
+    background: none;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #00ffff;
+}
+
+/* Hover Effects */
+.shape:hover {
+    transform: scale(1.3);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.shape.circle:hover {
+    background: radial-gradient(circle, #ff00ff, #ffcc00);
+}
+
+.shape.square:hover {
+    background: linear-gradient(45deg, #ff6600, #cc0066);
+}
+
+.shape.triangle:hover {
+    border-bottom: 50px solid #ffcc00;
+}
+
+/* Falling Animation */
+@keyframes fallDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+/* Add Parallax Effect to Stairs */
+@keyframes moveStairs {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(100vh) scale(1.05);
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Modal Buttons */
+button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c94c29;
+}
